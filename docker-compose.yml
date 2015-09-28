@@ -1,0 +1,21 @@
+dev-mysql:
+  environment:
+    MYSQL_ROOT_PASSWORD: "secretpassword"
+    MYSQL_USER: "devUser"
+    MYSQL_PASSWORD: "secretpassword"
+    MYSQL_DATABASE: development
+    LOAD_FIXTURES: false
+  build: .
+  ports:
+   - "4306:3306"
+test-mysql:
+  environment:
+    MYSQL_ROOT_PASSWORD: "secretpassword"
+    MYSQL_USER: "testUser"
+    MYSQL_PASSWORD: "secretpassword"
+    MYSQL_DATABASE: test
+    LOAD_FIXTURES: true
+  build: .
+  ports:
+   - "5306:3306"
+
